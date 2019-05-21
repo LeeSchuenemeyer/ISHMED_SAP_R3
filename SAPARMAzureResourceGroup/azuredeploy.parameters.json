@@ -1,0 +1,29 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "sapSystemId": {
+      "value": "ISH"
+    },
+    "adminUsername": {
+      "value": "ishmedtoplevel"
+    },
+    "sapSystemSize": {
+      "value": "Demo"
+    },
+    "systemAvailability": {
+      "value": "HA"
+    },
+    "subnetId": {
+      "value": ""
+    },
+    "adminPassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/e2af5da4-4688-470a-bd1b-1914a2206d96/resourceGroups/OperationsRG1/providers/Microsoft.KeyVault/vaults/AzureKeyVaultDemoLWS"
+        },
+        "secretName": "AzureDeployemntKeySecret"
+      }
+    }
+  }
+}

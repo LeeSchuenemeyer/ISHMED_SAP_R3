@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>bc4a3139-aee9-4cce-8cd1-05a86b74ad63</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PrepareForBuildDependsOn>
+    </PrepareForBuildDependsOn>
+  </PropertyGroup>
+  <Import Condition=" Exists('Deployment.targets') " Project="Deployment.targets" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
+  <!-- vertag<:>start tokens<:>maj.min -->
+  <Import Condition=" Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Deployment\1.1\DeploymentProject.targets') " Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Deployment\1.1\DeploymentProject.targets" />
+  <!-- vertag<:>end -->
+  <ItemGroup>
+    <Content Include="azuredeploy.parameters.json" />
+    <Content Include="azuredeploy.json" />
+    <None Include="Deployment.targets">
+      <Visible>False</Visible>
+    </None>
+    <Content Include="Deploy-AzureResourceGroup.ps1" />
+    <Content Include="shared\noop.ps1" />
+    <Content Include="shared\loadbalancer.json" />
+    <Content Include="README.md" />
+    <Content Include="shared\noop.sh" />
+    <Content Include="shared\newvnetnsg.json" />
+    <Content Include="shared\lb-SCS0.json" />
+    <Content Include="shared\lb-SCS.json" />
+    <Content Include="shared\lb-ERS0.json" />
+    <Content Include="shared\lb-ERS-Windows.json" />
+    <Content Include="shared\lb-ERS-Linux.json" />
+    <Content Include="shared\lb-DB0.json" />
+    <Content Include="shared\lb-DB-SQL.json" />
+    <Content Include="shared\lb-DB-HANA.json" />
+    <Content Include="shared\server-md.json" />
+    <Content Include="shared\os-disk-parts-md.json" />
+    <Content Include="shared\nic-config.json" />
+    <Content Include="shared\newpip.json" />
+    <Content Include="shared\newnsg.json" />
+  </ItemGroup>
+  <Target Name="GetReferenceAssemblyPaths" />
+</Project>
